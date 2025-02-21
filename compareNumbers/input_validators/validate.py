@@ -1,19 +1,19 @@
+#This file validates the input. I makes sure the input matches the given restraint in the excersise
 import sys
 import re
 
-for _ in range(3):
-    line = sys.stdin.readline()
-    print(f"Hm... {line}", file=sys.stderr)
-    if not re.match(r"(0|([1-9][0-9]*))\n", line):
-        sys.exit(43)
+for _ in range(2):
+    line = sys.stdin.readline() #Reads the line
+    if not re.match(r"(0|([1-9][0-9]*))\n", line): #Checks for actual numbers
+        sys.exit(43) #fail
     try:
-        x = int(line)
+        x = int(line) #Turns the line(string) into an int
 
-        if not 0 <= x <= 1000:
-            sys.exit(43)
+        if not 0 <= x <= 100: #Checks the range
+            sys.exit(43) #fail
     except ValueError:
-        sys.exit(43)
+        sys.exit(43) #fail
 
-if sys.stdin.readline() != "":
-    sys.exit(43)
-sys.exit(42)
+if sys.stdin.readline() != "": #Checks that there are only the desired amount of inputs
+    sys.exit(43) #fail
+sys.exit(42) #success
