@@ -1,11 +1,8 @@
-import time
-
+#!/usr/bin/python3
 
 a = int(input())
 b = int(input())
 
-for _ in range(10**10):
-    a = a + b - b
 
 if a == b:
     print("equal")
